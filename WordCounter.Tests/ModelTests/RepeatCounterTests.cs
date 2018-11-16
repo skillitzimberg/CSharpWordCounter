@@ -72,45 +72,27 @@ namespace WordCounter.Tests
     {
       string wordToFind = "an";
       string stringToSearch = "a cat that saw a rat and a dog had an anuerism.";
-      string[] arrayOfStringsToSearch = stringToSearch.Split(' ');
       List<string> expectedList = new List<string> {"an"};
-      List<string> allMatches = new List<string> {};
-
-      foreach (string word in arrayOfStringsToSearch)
-      {
-        if (wordToFind == word)
-        {
-          allMatches.Add(word);
-        }
-        else
-        {
-          List<string> noMatches = new List<string> {"No matches found."};
-        }
-      }
-
-      List<string> failState = new List<string> {"No matches found."};
-
-      foreach (string word in expectedList)
-      {
-        Console.WriteLine("expectedList: " + word);
-      }
-
-      foreach (string word in allMatches)
-      {
-        Console.WriteLine("allMatches: " + word);
-      }
 
       RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
 
       List<string> actualList = newRepeatCounter.ReturnMatchingWords();
 
-      foreach (string word in actualList)
-      {
-        Console.WriteLine("actualList: " + word);
-      }
+      CollectionAssert.AreEqual(expectedList, actualList);
+    }
+
+    [TestMethod]
+    public void ReturnMatchingWords_ReturnAListOfMultipleMatchingWordsFound_ListOfFoundMatches()
+    {
+      string wordToFind = "happy";
+      string stringToSearch = "I felt happy because I saw the others were happy and because I knew I should feel happy, but I wasn’t really happy.";
+      List<string> expectedList = new List<string> {"happy", "happy", "happy", "happy"};
+
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
+
+      List<string> actualList = newRepeatCounter.ReturnMatchingWords();
 
       CollectionAssert.AreEqual(expectedList, actualList);
-
     }
   }
 }
