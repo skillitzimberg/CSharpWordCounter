@@ -1,4 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
 using WordCounter.Models;
 
 namespace WordCounter.Tests
@@ -62,6 +64,30 @@ namespace WordCounter.Tests
       bool doesStringToSearchContainWordToFind = newRepeatCounter.SearchStringToSearchForWordToFind();
 
       Assert.AreEqual(true, doesStringToSearchContainWordToFind);
+    }
+
+    [TestMethod]
+    public void ReturnMatchingWords_ReturnAListOfMatchingWordsFound_ListOfFoundMatches()
+    {
+      string wordToFind = "a";
+      string stringToSearch = "This is a cat.";
+      List<string> expectedList = new List<string> {"a"};
+
+      foreach (string word in expectedList)
+      {
+        Console.WriteLine("expectedList: " + word);
+      }
+
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
+
+      List<string> actualList = newRepeatCounter.ReturnMatchingWords();
+
+      foreach (string word in actualList)
+      {
+        Console.WriteLine("actualList: " + word);
+      }
+
+      CollectionAssert.AreEqual(expectedList, actualList);
     }
   }
 }
