@@ -104,9 +104,9 @@ namespace WordCounter.Tests
 
       RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
 
-      List<string> actualCount = newRepeatCounter.CountHowManyTimesTheWordWasFound();
+      int actualCount = newRepeatCounter.CountHowManyTimesTheWordWasFound();
 
-      Assert.AreEqual(expectedList, actualList);
+      Assert.AreEqual(expectedCount, actualCount);
     }
   }
 }
