@@ -94,5 +94,19 @@ namespace WordCounter.Tests
 
       CollectionAssert.AreEqual(expectedList, actualList);
     }
+
+    [TestMethod]
+    public void CountHowManyTimesTheWordWasFound_ReturnTheNumberOfTimesTheWordWasFound_Integer()
+    {
+      string wordToFind = "happy";
+      string stringToSearch = "I felt happy because I saw the others were happy and because I knew I should feel happy, but I wasn’t really happy.";
+      int expectedCount = 4;
+
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
+
+      List<string> actualCount = newRepeatCounter.CountHowManyTimesTheWordWasFound();
+
+      Assert.AreEqual(expectedList, actualList);
+    }
   }
 }
