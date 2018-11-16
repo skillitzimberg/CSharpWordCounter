@@ -6,6 +6,6 @@ namespace WordCounter.Tests
   [TestClass]
   public class RepeatCounterTest
   {
-    
+    [TestMethod]
   }
 }
