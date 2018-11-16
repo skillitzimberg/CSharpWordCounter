@@ -9,19 +9,20 @@ namespace WordCounter.Tests
     [TestMethod]
     public void RepeatCounterConstructor_CreatesInstanceOfReapeatCounter_RepeatCounter()
     {
-      RepeatCounter newRepeatCounter = new RepeatCounter("String for testing.");
+      RepeatCounter newRepeatCounter = new RepeatCounter("word", "A sentence");
       Assert.AreEqual(typeof(RepeatCounter), newRepeatCounter.GetType());
     }
 
     [TestMethod]
     public void GetWordToFind_ReturnsWordToFind_WordToFind()
     {
-      string expectedString = "hello";
-      RepeatCounter newRepeatCounter = new RepeatCounter(expectedString);
+      string wordToFind = "hello";
+      string stringToSearch = "hello, world";
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
 
       string actualString = newRepeatCounter.GetWordToFind();
 
-      Assert.AreEqual(expectedString, actualString);
+      Assert.AreEqual(wordToFind, actualString);
     }
 
     [TestMethod]
