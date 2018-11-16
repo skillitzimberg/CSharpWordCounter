@@ -43,6 +43,7 @@ namespace WordCounter.Tests
     [TestMethod]
     public void CompareWordToFindWithStringToSearch_ConfirmWhetherStringsMatchOrNot_True()
     {
+      Console.WriteLine("CompareWordToFindWithStringToSearch_ConfirmWhetherStringsMatchOrNot_True");
       string wordToFind = "w";
       string StringToSearch = "w";
 
@@ -69,13 +70,34 @@ namespace WordCounter.Tests
     [TestMethod]
     public void ReturnMatchingWords_ReturnAListOfMatchingWordsFound_ListOfFoundMatches()
     {
-      string wordToFind = "a";
-      string stringToSearch = "This is a cat.";
-      List<string> expectedList = new List<string> {"a"};
+      string wordToFind = "an";
+      string stringToSearch = "a cat that saw a rat and a dog had an anuerism.";
+      string[] arrayOfStringsToSearch = stringToSearch.Split(' ');
+      List<string> expectedList = new List<string> {"an"};
+      List<string> allMatches = new List<string> {};
+
+      foreach (string word in arrayOfStringsToSearch)
+      {
+        if (wordToFind == word)
+        {
+          allMatches.Add(word);
+        }
+        else
+        {
+          List<string> noMatches = new List<string> {"No matches found."};
+        }
+      }
+
+      List<string> failState = new List<string> {"No matches found."};
 
       foreach (string word in expectedList)
       {
         Console.WriteLine("expectedList: " + word);
+      }
+
+      foreach (string word in allMatches)
+      {
+        Console.WriteLine("allMatches: " + word);
       }
 
       RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
@@ -88,6 +110,7 @@ namespace WordCounter.Tests
       }
 
       CollectionAssert.AreEqual(expectedList, actualList);
+
     }
   }
 }
