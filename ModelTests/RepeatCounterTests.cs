@@ -55,9 +55,9 @@ namespace WordCounter.Tests
     public void SearchStringToSearchForWordToFind_ConfirmWhetherStringToSearchContainsWordToFind_True()
     {
       string wordToFind = "a";
-      string StringToSearch = "This is a cat.";
+      string stringToSearch = "This is a cat.";
 
-      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, StringToSearch);
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
 
       bool doesStringToSearchContainWordToFind = newRepeatCounter.SearchStringToSearchForWordToFind();
 
