@@ -38,6 +38,17 @@ namespace WordCounter.Tests
       Assert.AreEqual(expectedStringToSearch, actualStringToSearch);
     }
 
+    [TestMethod]
+    public void CompareWordToFindWithStringToSearch_ConfirmWhetherStringsMatchOrNot_True()
+    {
+      string wordToFind = "w";
+      string StringToSearch = "w";
 
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, StringToSearch);
+
+      bool doStringsMatch = newRepeatCounter.CompareWordToFindWithStringToSearch();
+
+      Assert.AreEqual(true, doStringsMatch);
+    }
   }
 }
