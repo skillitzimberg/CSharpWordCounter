@@ -30,11 +30,14 @@ namespace WordCounter.Tests
     {
       string wordToFind = "searched";
       string expectedStringToSearch = "This string is to be searched for WordToFind";
+
       RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, expectedStringToSearch);
 
       string actualStringToSearch = newRepeatCounter.GetStringToSearch();
 
       Assert.AreEqual(expectedStringToSearch, actualStringToSearch);
     }
+
+
   }
 }
