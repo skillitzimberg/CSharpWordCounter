@@ -50,5 +50,18 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(true, doStringsMatch);
     }
+
+    [TestMethod]
+    public void SearchStringToSearchForWordToFind_ConfirmWhetherStringToSearchContainsWordToFind_True()
+    {
+      string wordToFind = "a";
+      string StringToSearch = "This is a cat.";
+
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, StringToSearch);
+
+      bool doesStringToSearchContainWordToFind = newRepeatCounter.SearchStringToSearchForWordToFind();
+
+      Assert.AreEqual(true, doesStringToSearchContainWordToFind);
+    }
   }
 }
