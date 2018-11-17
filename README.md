@@ -16,14 +16,16 @@ Other than a call to the constructor, I'm not sure what the input is for this sp
 This is the most basic step in starting the project. An instance of the class holds the properties need for the program to run. I understand that C# allows implicit construction of instances, but I wanted to keep practicing as many elements of object oriented programming as I could. Also it might be needed for next week. I'm not totally sure.
 
 ##### Spec 2: RepeatCounter can hold a word to search for in later specs.
-The original input was a single letter. The output was the same letter.
+**Example:** The original input was a single letter 'a'. The output was the same letter 'a'.
 
 This is a property that is passed in each time the program is run and I wanted to make sure it was accessible. I chose a letter because I knew that I was going to be looking for letters in later specs.
+
+The input for StringToSearch was added later as the class/constructor now had two properties and passing in a single property caused compilation errors.
 
 ##### Spec 3: RepeatCounter can hold a string to be searched in later specs.
 **Example:** The input is the word 'searched' and the phrase 'This string is to be searched for WordToFind' The output is the phrase 'This string is to be searched for WordToFind'.
 
-I chose these inputs because I was trying to be semantic. This spec accomplishes a similar goal as the previous spec.
+I chose these inputs because I was trying to be semantic. This spec accomplishes a similar goal as the previous spec but incrementally adds to the program's capabilities.
 
 ##### Spec 4: RepeatCounter can compare its strings when they are both letters.
 **Example:** The inputs for this spec are the single letters 'w'. The output is the boolean true.
@@ -60,10 +62,10 @@ This is also the next smallest logical step from the previous spec.
 I think just due to nervousness I wasn't thinking clearly and did not include enough specifications. Below are missing specs and problems with the above specs discovered while building. I am continuing to build based only on the original eight specs, but I may have complications due to the things I missed.
 
 **Below this list of missing and mishandled specs are additional specs I added after completing the first eight.**
-* **Missing spec:** did not anticipate handling punctuation. Handled with seventh spec.
+* **Missing spec:** did not anticipate handling punctuation. Handled with seventh spec test.
 * **Missing spec:** did not anticipate handling capitalization.
-* **Missing spec:** did not anticipate creating Lists. Handled with fifth spec.
-* **Missing spec:** did not anticipate using those Lists. Handled with fifth spec.
+* **Missing spec:** did not anticipate creating Lists. Handled with fifth spec test.
+* **Missing spec:** did not anticipate using those Lists. Handled with fifth spec test.
 * **Missing/mishandled spec:** the fifth spec should have only checked that the stringToSearch contains wordToFind. My first commit on this spec passing was only for the 'contains' condition.
 
 ##### Spec 9: RepeatCounter can find instances of the first string as a word in the second string when it is capitalized.
