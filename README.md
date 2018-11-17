@@ -21,16 +21,14 @@ The original input was a single letter. The output was the same letter.
 This is a property that is passed in each time the program is run and I wanted to make sure it was accessible. I chose a letter because I knew that I was going to be looking for letters in later specs.
 
 ##### Spec 3: RepeatCounter can hold a string to be searched in later specs.
-The input is the word 'searched' and the phrase 'This string is to be searched for WordToFind' because I was trying to be semantic and I wanted to make sure that I was getting back everything I was putting in. The output is the phrase 'This string is to be searched for WordToFind'.
+**Example:** The input is the word 'searched' and the phrase 'This string is to be searched for WordToFind' The output is the phrase 'This string is to be searched for WordToFind'.
 
-This spec accomplishes a similar goal as the previous spec.
+I chose these inputs because I was trying to be semantic. This spec accomplishes a similar goal as the previous spec.
 
 ##### Spec 4: RepeatCounter can compare its strings when they are both letters.
-The input for this spec is single letters. The output is the boolean true.
+**Example:** The inputs for this spec are the single letters 'w'. The output is the boolean true.
 
-I chose single letters as they are the simplest relevant things to compare. I wanted to be sure that RepeatCounter could 'see' and report the value of its properties.
-
-
+I chose single letters (which single letter didn't seem important) as they are the simplest relevant things to compare. I wanted to be sure that RepeatCounter could 'see' and report the value of its properties.
 
 ##### Spec 5: RepeatCounter can find the first string as a letter in the second string when it is not part of a word.
 **Example:** The first string is the letter 'a'; the second string is 'a cat' - the program will find the word 'a', but ignore the word 'cat'. The output is boolean true.
@@ -74,6 +72,21 @@ I think just due to nervousness I wasn't thinking clearly and did not include en
 ## Setup/Installation Requirements
 To view or clone the code, go to [GitHub](https://github.com/skillitzimberg/WordCounter.Solution).
 
+To set up your Mac:
+Download .NET Core SDK (Software Development Kit);
+
+Open the file to launch the installer. The default settings are alright.
+
+Confirm the installation by running the command $ dotnet --version in the terminal. The response will be along the lines of 1.1.4.
+
+Download Mono [here](https://www.mono-project.com/download/stable/).
+
+Open the downloaded .pkg file to run the installation wizard.
+
+Confirm the installation is successful by running the command $ mono --version. You should see a response including a version number similar to, but not necessarily exactly,  5.10.1.57.
+
+Instruction for PC/Windows are [here](https://www.microsoft.com/net/learn/dotnet/hello-world-tutorial).
+
 ## Known Bugs
 Does not handle capitalization.
 
@@ -83,7 +96,7 @@ There is no one here.
 
 ## Technologies Used
 
-C#
+C#, .Net, and Mono.
 
 ### License
 
