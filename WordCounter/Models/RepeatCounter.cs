@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace WordCounter.Models
 {
   public class RepeatCounter
@@ -38,5 +41,29 @@ namespace WordCounter.Models
       }
       return false;
     }
+
+    public List<string> ReturnMatchingWords()
+    {
+      char[] charsToTrim = {',', '.', '?', '!', ';', ':'};
+      string[] arrayOfStringsToSearch = StringToSearch.Split(' ');
+      List<string> allMatches = new List<string> {};
+
+      foreach (string word in arrayOfStringsToSearch)
+      {
+        string checkThisWord = word.TrimEnd(charsToTrim);
+        if (WordToFind == checkThisWord)
+        {
+          allMatches.Add(checkThisWord);
+        }
+      }
+      return allMatches;
+    }
+
+    public int CountHowManyTimesTheWordWasFound()
+    {
+      List<string> matchingWords = this.ReturnMatchingWords();
+      return matchingWords.Count;
+    }
+
   }
 }
