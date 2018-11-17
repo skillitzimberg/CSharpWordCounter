@@ -72,10 +72,10 @@ I think just due to nervousness I wasn't thinking clearly and did not include en
 **Example:** The first string is the word 'windy'; the second string is 'Is the Windy City always windy?' - the program will find each instance of the word 'windy' and return the count 2.
 
 ## Setup/Installation Requirements
-To view or clone the code, go to [GitHub](https://github.com/skillitzimberg/CSharpWordCounter).
+To view or clone the code, go to [GitHub](https://github.com/skillitzimberg/WordCounter.Solution).
 
 ## Known Bugs
-
+Does not handle capitalization.
 
 ## Support and contact details
 
