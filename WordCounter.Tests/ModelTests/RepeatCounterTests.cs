@@ -71,7 +71,7 @@ namespace WordCounter.Tests
     public void ReturnMatchingWords_ReturnAListOfMatchingWordsFound_ListOfFoundMatches()
     {
       string wordToFind = "an";
-      string stringToSearch = "a cat that saw a rat and a dog had an anuerism.";
+      string stringToSearch = "a cat that saw a rat and a dog had an anuerysm.";
       List<string> expectedList = new List<string> {"an"};
 
       RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);

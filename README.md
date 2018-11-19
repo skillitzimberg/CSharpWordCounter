@@ -44,7 +44,7 @@ Also, as noted below, I messed up this spec by trying to do too much and things 
 ##### Spec 6: RepeatCounter can find the first string as a word in the second string when it is not part of a word.
 **Example:** The first string is the word 'dog'; the second string is 'the dog dodged doggedly' - the program will find the word 'dog', but ignore the word 'doggedly'.
 
-As for the previous spec, these inputs seemed the smallest relevant step to take an also double checked that the 'dog' in 'doggedly' would be ignored.
+As for the previous spec, these inputs seemed the smallest relevant step to take and also double checked that the 'dog' in 'doggedly' would be ignored. I later changed the input to 'an' and output to 'a cat that saw a rat and a dog had an anuerysm.' because I wanted to make sure that the program was finding the word when it wasn't part of a word and was looking at every word in the string, not stopping part way through. This was in part due to some issues I was troubleshooting due to my making the fifth spec too broad.
 
 ##### Spec 7: RepeatCounter can find every instance of the first string as a word in the second string when it is not part of a word.
 **Example:** The first string is the word 'happy'; the second string is 'I felt happy because I saw the others were happy and because I knew I should feel happy, but I wasn’t really happy.' - the program will find each instance of the word 'happy'.
