@@ -3,67 +3,53 @@ using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
-  public class RepeatCounter
-  {
-    private string WordToFind;
-    private string StringToSearch;
-
-    public RepeatCounter(string wordToFind, string stringToSearch)
+    public class RepeatCounter
     {
-      WordToFind = wordToFind;
-      StringToSearch = stringToSearch;
-    }
+        private string WordToFind;
+        private string StringToSearch;
+        private char[] CharsToTrim = {',', '.', '?', '!', ';', ':'};
+        private List<string> InstancesOfWordToFind = new List<string> {};
 
-    public string GetWordToFind()
-    {
-      return WordToFind;
-    }
-
-    public string GetStringToSearch()
-    {
-      return StringToSearch;
-    }
-
-    public bool CompareWordToFindWithStringToSearch()
-    {
-      if (WordToFind == StringToSearch)
-      {
-        return true;
-      }
-      return false;
-    }
-
-    public bool SearchStringToSearchForWordToFind()
-    {
-      if (StringToSearch.Contains(WordToFind))
-      {
-        return true;
-      }
-      return false;
-    }
-
-    public List<string> ReturnMatchingWords()
-    {
-      char[] charsToTrim = {',', '.', '?', '!', ';', ':'};
-      string[] arrayOfStringsToSearch = StringToSearch.Split(' ');
-      List<string> allMatches = new List<string> {};
-
-      foreach (string word in arrayOfStringsToSearch)
-      {
-        string checkThisWord = word.TrimEnd(charsToTrim);
-        if (WordToFind == checkThisWord)
+        public RepeatCounter(string wordToFind, string stringToSearch)
         {
-          allMatches.Add(checkThisWord);
+            WordToFind = wordToFind;
+            StringToSearch = stringToSearch;
         }
-      }
-      return allMatches;
-    }
 
-    public int CountHowManyTimesTheWordWasFound()
-    {
-      List<string> matchingWords = this.ReturnMatchingWords();
-      return matchingWords.Count;
-    }
+        public string GetWordToFind()
+        {
+            return WordToFind;
+        }
 
-  }
+        public string GetStringToSearch()
+        {
+            return StringToSearch;
+        }
+
+        public bool CompareWordToFindWithWordFound(string checkThisWord)
+        {
+            checkThisWord = checkThisWord.TrimEnd(CharsToTrim);
+            if (String.Compare(WordToFind, checkThisWord, true) == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public int CountHowManyTimesTheWordWasFound()
+        {
+            string[] arrayOfStringsToSearch = StringToSearch.Split(' ');
+
+            foreach (string word in arrayOfStringsToSearch)
+            {
+                if (this.CompareWordToFindWithWordFound(word))
+                {
+                    InstancesOfWordToFind.Add(word);
+                }
+            }
+            Console.WriteLine(InstancesOfWordToFind.Count);
+            return InstancesOfWordToFind.Count;
+        }
+
+    }
 }
