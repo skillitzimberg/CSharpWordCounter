@@ -13,7 +13,6 @@ namespace WordCounter.Models
     {
       _wordToFind = wordToFind;
       _stringToSearch = stringToSearch;
-      _matchCount = 0;
     }
 
     public string Get_wordToFind()
@@ -29,6 +28,11 @@ namespace WordCounter.Models
     public int Get_matchCount()
     {
       return _matchCount;
+    }
+
+    public void Set_matchCount(int count)
+    {
+      _matchCount = count;
     }
 
     public bool _wordToFindMatches(string wordToCompare)
@@ -56,7 +60,7 @@ namespace WordCounter.Models
     public int CountHowManyTimesTheWordWasFound()
     {
       List<string> matchingWords = this.FindMatchingWords();
-      _matchCount = matchingWords.Count;
+
       return matchingWords.Count;
     }
 

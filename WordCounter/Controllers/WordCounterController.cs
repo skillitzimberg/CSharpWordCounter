@@ -14,7 +14,7 @@ namespace WordCounter.Controllers
     [HttpGet("/wordcounter/new")]
     public ActionResult New()
     {
-      return View();
+      return RedirectToAction("Show");
     }
 
     // [HttpPost("/wordcounter")]
