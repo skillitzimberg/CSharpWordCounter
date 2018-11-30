@@ -4,11 +4,13 @@
 <div class="container">
     <h1>Start A Word Count</h1>
 
-    <form class="" action="/wordcounter" method="post">
-      <label for="word">Word to find: </label>
-      <input type="text" name="word" id="word">
-      <label for="string">Text to search for the word: </label>
-      <input type="text" name="string" id="string">
+    <form class="" action="/wordcounter/show" method="post">
+      <label for="wordToFind">Word to find: </label>
+      <input type="text" name="wordToFind" id="wordToFind">
+
+      <label for="phraseToSearch">Text to search for the word: </label>
+      <input type="text" name="phraseToSearch" id="phraseToSearch">
+
       <button type="submit" class="btn">Go!</button>
     </form>
 

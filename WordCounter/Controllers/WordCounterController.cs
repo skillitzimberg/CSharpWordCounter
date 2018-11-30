@@ -14,15 +14,15 @@ namespace WordCounter.Controllers
     [HttpGet("/wordcounter/new")]
     public ActionResult New()
     {
-      return RedirectToAction("Index");
+      return View();
     }
 
-    // [HttpPost("/wordcounter")]
-    // public ActionResult Create(string wordToFind, string phraseToSearch)
-    // {
-    //   Counter newCounter = new Counter(wordToFind, phraseToSearch);
-    //   return RedirectToAction("Show");
-    // }
+    [HttpPost("/wordcounter/show")]
+    public ActionResult Show(string wordToFind, string phraseToSearch)
+    {
+      Counter newCounter = new Counter(wordToFind, phraseToSearch);
+      return View(newCounter);
+    }
 
   }
 }

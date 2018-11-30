@@ -32,20 +32,20 @@ namespace WordCounter.Tests
       ActionResult newView = controller.New();
 
       //Assert
-      Assert.IsInstanceOfType(newView, typeof(RedirectToActionResult));
+      Assert.IsInstanceOfType(newView, typeof(ViewResult));
     }
 
-    [TestMethod]
-    public void New_RedirectsToCorrectAction_Index()
-    {
-      WordCounterController controller = new WordCounterController();
-
-      RedirectToActionResult actionResult = controller.New() as RedirectToActionResult;
-
-      string result = actionResult.ActionName;
-
-      Assert.AreEqual(result, "Index");
-    }
+    // [TestMethod]
+    // public void New_ReturnsCorrectAction_New()
+    // {
+    //   WordCounterController controller = new WordCounterController();
+    //
+    //   ActionResult actionResult = controller.New();
+    //
+    //   string result = actionResult.ActionName;
+    //
+    //   Assert.AreEqual(result, "New");
+    // }
 
 
     // [TestMethod]
