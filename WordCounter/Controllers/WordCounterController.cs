@@ -20,7 +20,7 @@ namespace WordCounter.Controllers
     [HttpPost("/wordcounter")]
     public ActionResult Create()
     {
-      return new EmptyResult();
+      return View();
     }
 
   }
