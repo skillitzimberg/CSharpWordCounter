@@ -6,16 +6,16 @@ using WordCounter.Models;
 namespace WordCounter.Tests
 {
   [TestClass]
-  public class RepeatCounterTest
+  public class CounterTest
   {
     [TestMethod]
     public void Get_wordToFind_ReturnsWordToFind_WordToFind()
     {
       string wordToFind = "hello";
       string stringToSearch = "hello, world";
-      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
 
-      string actualString = newRepeatCounter.Get_wordToFind();
+      string actualString = newCounter.Get_wordToFind();
 
       Assert.AreEqual(wordToFind, actualString);
     }
@@ -26,9 +26,9 @@ namespace WordCounter.Tests
       string wordToFind = "searched";
       string expectedStringToSearch = "This string is to be searched for WordToFind";
 
-      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, expectedStringToSearch);
+      Counter newCounter = new Counter(wordToFind, expectedStringToSearch);
 
-      string actualStringToSearch = newRepeatCounter.Get_stringToSearch();
+      string actualStringToSearch = newCounter.Get_stringToSearch();
 
       Assert.AreEqual(expectedStringToSearch, actualStringToSearch);
     }
@@ -39,9 +39,9 @@ namespace WordCounter.Tests
       string wordToFind = "w";
       string stringToSearch = "w";
 
-      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
 
-      bool doStringsMatch = newRepeatCounter._wordToFindMatches(stringToSearch);
+      bool doStringsMatch = newCounter._wordToFindMatches(stringToSearch);
 
       Assert.AreEqual(true, doStringsMatch);
     }
@@ -53,9 +53,9 @@ namespace WordCounter.Tests
       string stringToSearch = "a cat that saw a rat and a dog had an anuerysm.";
       List<string> expectedList = new List<string> {"an"};
 
-      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
 
-      List<string> actualList = newRepeatCounter.FindMatchingWords();
+      List<string> actualList = newCounter.FindMatchingWords();
 
       CollectionAssert.AreEqual(expectedList, actualList);
     }
@@ -67,9 +67,9 @@ namespace WordCounter.Tests
       string stringToSearch = "I felt happy because I saw the others were happy and because I knew I should feel happy, but I wasn’t really happy.";
       List<string> expectedList = new List<string> {"happy", "happy", "happy", "happy"};
 
-      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
 
-      List<string> actualList = newRepeatCounter.FindMatchingWords();
+      List<string> actualList = newCounter.FindMatchingWords();
 
       CollectionAssert.AreEqual(expectedList, actualList);
     }
@@ -81,9 +81,9 @@ namespace WordCounter.Tests
       string stringToSearch = "I felt happy because I saw the others were happy and because I knew I should feel happy, but I wasn’t really happy.";
       int expectedCount = 4;
 
-      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
 
-      int actualCount = newRepeatCounter.CountHowManyTimesTheWordWasFound();
+      int actualCount = newCounter.CountHowManyTimesTheWordWasFound();
 
       Assert.AreEqual(expectedCount, actualCount);
     }
@@ -94,9 +94,9 @@ namespace WordCounter.Tests
       string wordToFind = "w";
       string stringToSearch = "W";
 
-      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
 
-      bool doStringsMatch = newRepeatCounter._wordToFindMatches(stringToSearch);
+      bool doStringsMatch = newCounter._wordToFindMatches(stringToSearch);
 
       Assert.AreEqual(true, doStringsMatch);
     }

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace WordCounter.Models
 {
-  public class RepeatCounter
+  public class Counter
   {
     private string _wordToFind;
     private string _stringToSearch;
 
-    public RepeatCounter(string wordToFind, string stringToSearch)
+    public Counter(string wordToFind, string stringToSearch)
     {
       _wordToFind = wordToFind;
       _stringToSearch = stringToSearch;

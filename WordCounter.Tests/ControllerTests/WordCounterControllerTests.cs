@@ -42,10 +42,10 @@ namespace WordCounter.Tests
       WordCounterController controller = new WordCounterController();
 
       //Act
-      ActionResult newView = controller.Create();
+      ActionResult newView = controller.Create("test", "test");
 
       //Assert
-      Assert.IsInstanceOfType(newView, typeof(ViewResult));
+      Assert.IsInstanceOfType(newView, typeof(RedirectToActionResult));
     }
 
     // [TestMethod]

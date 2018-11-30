@@ -18,9 +18,10 @@ namespace WordCounter.Controllers
     }
 
     [HttpPost("/wordcounter")]
-    public ActionResult Create()
+    public ActionResult Create(string wordToFind, string phraseToSearch)
     {
-      return View();
+      Counter newCounter = new Counter(wordToFind, phraseToSearch);
+      return View("Index");
     }
 
   }
