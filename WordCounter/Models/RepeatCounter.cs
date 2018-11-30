@@ -5,55 +5,42 @@ namespace WordCounter.Models
 {
   public class RepeatCounter
   {
-    private string WordToFind;
-    private string StringToSearch;
+    private string _wordToFind;
+    private string _stringToSearch;
 
     public RepeatCounter(string wordToFind, string stringToSearch)
     {
-      WordToFind = wordToFind;
-      StringToSearch = stringToSearch;
+      _wordToFind = wordToFind;
+      _stringToSearch = stringToSearch;
     }
 
-    public string GetWordToFind()
+    public string Get_wordToFind()
     {
-      return WordToFind;
+      return _wordToFind;
     }
 
-    public string GetStringToSearch()
+    public string Get_stringToSearch()
     {
-      return StringToSearch;
+      return _stringToSearch;
     }
 
-    public bool CompareWordToFindWithStringToSearch()
+    public bool _wordToFindMatches(string wordToCompare)
     {
-      if (WordToFind == StringToSearch)
-      {
-        return true;
-      }
-      return false;
+      return _wordToFind == wordToCompare;
     }
 
-    public bool SearchStringToSearchForWordToFind()
-    {
-      if (StringToSearch.Contains(WordToFind))
-      {
-        return true;
-      }
-      return false;
-    }
-
-    public List<string> ReturnMatchingWords()
+    public List<string> FindMatchingWords()
     {
       char[] charsToTrim = {',', '.', '?', '!', ';', ':'};
-      string[] arrayOfStringsToSearch = StringToSearch.Split(' ');
+      string[] arrayOfStringsToSearch = _stringToSearch.Split(' ');
       List<string> allMatches = new List<string> {};
 
       foreach (string word in arrayOfStringsToSearch)
       {
-        string checkThisWord = word.TrimEnd(charsToTrim);
-        if (WordToFind == checkThisWord)
+        string wordToCompare = word.TrimEnd(charsToTrim);
+        if (_wordToFindMatches(wordToCompare))
         {
-          allMatches.Add(checkThisWord);
+          allMatches.Add(wordToCompare);
         }
       }
       return allMatches;
@@ -61,7 +48,7 @@ namespace WordCounter.Models
 
     public int CountHowManyTimesTheWordWasFound()
     {
-      List<string> matchingWords = this.ReturnMatchingWords();
+      List<string> matchingWords = this.FindMatchingWords();
       return matchingWords.Count;
     }
 

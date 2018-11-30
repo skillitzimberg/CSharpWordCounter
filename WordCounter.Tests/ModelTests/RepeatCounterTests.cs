@@ -9,66 +9,45 @@ namespace WordCounter.Tests
   public class RepeatCounterTest
   {
     [TestMethod]
-    public void RepeatCounterConstructor_CreatesInstanceOfReapeatCounter_RepeatCounter()
-    {
-      RepeatCounter newRepeatCounter = new RepeatCounter("word", "A sentence");
-      Assert.AreEqual(typeof(RepeatCounter), newRepeatCounter.GetType());
-    }
-
-    [TestMethod]
-    public void GetWordToFind_ReturnsWordToFind_WordToFind()
+    public void Get_wordToFind_ReturnsWordToFind_WordToFind()
     {
       string wordToFind = "hello";
       string stringToSearch = "hello, world";
       RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
 
-      string actualString = newRepeatCounter.GetWordToFind();
+      string actualString = newRepeatCounter.Get_wordToFind();
 
       Assert.AreEqual(wordToFind, actualString);
     }
 
     [TestMethod]
-    public void GetStringToSearch_ReturnsTheStringToSearch_StringToSearch()
+    public void Get_stringToSearch_ReturnsTheStringToSearch_StringToSearch()
     {
       string wordToFind = "searched";
       string expectedStringToSearch = "This string is to be searched for WordToFind";
 
       RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, expectedStringToSearch);
 
-      string actualStringToSearch = newRepeatCounter.GetStringToSearch();
+      string actualStringToSearch = newRepeatCounter.Get_stringToSearch();
 
       Assert.AreEqual(expectedStringToSearch, actualStringToSearch);
     }
 
     [TestMethod]
-    public void CompareWordToFindWithStringToSearch_ConfirmWhetherStringsMatchOrNot_True()
+    public void _wordToFindMatches_ConfirmWhetherStringsMatchOrNot_True()
     {
-      Console.WriteLine("CompareWordToFindWithStringToSearch_ConfirmWhetherStringsMatchOrNot_True");
       string wordToFind = "w";
-      string StringToSearch = "w";
+      string stringToSearch = "w";
 
-      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, StringToSearch);
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
 
-      bool doStringsMatch = newRepeatCounter.CompareWordToFindWithStringToSearch();
+      bool doStringsMatch = newRepeatCounter._wordToFindMatches(stringToSearch);
 
       Assert.AreEqual(true, doStringsMatch);
     }
 
     [TestMethod]
-    public void SearchStringToSearchForWordToFind_ConfirmWhetherStringToSearchContainsWordToFind_True()
-    {
-      string wordToFind = "a";
-      string stringToSearch = "This is a cat.";
-
-      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
-
-      bool doesStringToSearchContainWordToFind = newRepeatCounter.SearchStringToSearchForWordToFind();
-
-      Assert.AreEqual(true, doesStringToSearchContainWordToFind);
-    }
-
-    [TestMethod]
-    public void ReturnMatchingWords_ReturnAListOfMatchingWordsFound_ListOfFoundMatches()
+    public void FindMatchingWords_ReturnAListOfMatchingWordsFound_ListOfFoundMatches()
     {
       string wordToFind = "an";
       string stringToSearch = "a cat that saw a rat and a dog had an anuerysm.";
@@ -76,13 +55,13 @@ namespace WordCounter.Tests
 
       RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
 
-      List<string> actualList = newRepeatCounter.ReturnMatchingWords();
+      List<string> actualList = newRepeatCounter.FindMatchingWords();
 
       CollectionAssert.AreEqual(expectedList, actualList);
     }
 
     [TestMethod]
-    public void ReturnMatchingWords_ReturnAListOfMultipleMatchingWordsFound_ListOfFoundMatches()
+    public void FindMatchingWords_ReturnAListOfMultipleMatchingWordsFound_ListOfFoundMatches()
     {
       string wordToFind = "happy";
       string stringToSearch = "I felt happy because I saw the others were happy and because I knew I should feel happy, but I wasn’t really happy.";
@@ -90,7 +69,7 @@ namespace WordCounter.Tests
 
       RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
 
-      List<string> actualList = newRepeatCounter.ReturnMatchingWords();
+      List<string> actualList = newRepeatCounter.FindMatchingWords();
 
       CollectionAssert.AreEqual(expectedList, actualList);
     }
