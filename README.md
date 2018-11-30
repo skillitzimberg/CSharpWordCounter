@@ -9,7 +9,7 @@ The goal of this project is to write a program that gathers both a word and sent
 
 Each spec should include a specific input and output, and a description sentence explaining why you selected that input value as the simplest way to test the behavior your spec covers.
 
-### Specifications:
+### MoSpecifications:
 ##### Spec 1: RepeatCounter can hold a word to search for in later specs.
 **Example:** The original input was a single letter 'a'. The output was the same letter 'a'.
 
@@ -53,18 +53,9 @@ It also ended up providing a good case to ignore punctuation.
 
 This is also the next smallest logical step from the previous spec.
 
-##### Problems Discovered With Specifications:
-I think just due to nervousness I wasn't thinking clearly and did not include enough specifications. Below are missing specs and problems with the above specs discovered while building. I am continuing to build based only on the original eight specs, but I may have complications due to the things I missed.
-
-**Below this list of missing and mishandled specs are additional specs I added after completing the first eight.**
-* **Missing spec:** did not anticipate handling punctuation. Handled with seventh spec test.
-* **Missing spec:** did not anticipate handling capitalization.
-* **Missing spec:** did not anticipate creating Lists. Handled with fifth spec test.
-* **Missing spec:** did not anticipate using those Lists. Handled with fifth spec test.
-* **Missing/mishandled spec:** the fifth spec should have only checked that the stringToSearch contains wordToFind. My first commit on this spec passing was only for the 'contains' condition.
-
 ##### Spec 8: RepeatCounter can find instances of the first string as a word in the second string when it is capitalized.
 **Example:** The first string is the word 'windy'; the second string is 'Is the Windy City always windy?' - the program will find each instance of the word 'windy' and return the count 2.
+
 
 ## Setup/Installation Requirements
 To view or clone the code, go to [GitHub](https://github.com/skillitzimberg/WordCounter.Solution).

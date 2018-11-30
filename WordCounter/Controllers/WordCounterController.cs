@@ -3,12 +3,12 @@ using WordCounter.Models;
 
 namespace WordCounter.Controllers
 {
-    public class HomeController : Controller
+    public class WordCounterController : Controller
     {
-        [Route("/")]
+        [Route("/index")]
         public ActionResult Index()
         {
-          return new EmptyResult();
+          return View();
         }
 
     }
