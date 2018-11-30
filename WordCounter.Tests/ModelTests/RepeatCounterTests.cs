@@ -87,5 +87,18 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(expectedCount, actualCount);
     }
+
+    [TestMethod]
+    public void _wordToFindMatches_MatchesWordsCaseInsensitive_True()
+    {
+      string wordToFind = "w";
+      string stringToSearch = "W";
+
+      RepeatCounter newRepeatCounter = new RepeatCounter(wordToFind, stringToSearch);
+
+      bool doStringsMatch = newRepeatCounter._wordToFindMatches(stringToSearch);
+
+      Assert.AreEqual(true, doStringsMatch);
+    }
   }
 }

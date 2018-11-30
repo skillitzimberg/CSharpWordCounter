@@ -63,7 +63,7 @@ I think just due to nervousness I wasn't thinking clearly and did not include en
 * **Missing spec:** did not anticipate using those Lists. Handled with fifth spec test.
 * **Missing/mishandled spec:** the fifth spec should have only checked that the stringToSearch contains wordToFind. My first commit on this spec passing was only for the 'contains' condition.
 
-##### Spec 9: RepeatCounter can find instances of the first string as a word in the second string when it is capitalized.
+##### Spec 8: RepeatCounter can find instances of the first string as a word in the second string when it is capitalized.
 **Example:** The first string is the word 'windy'; the second string is 'Is the Windy City always windy?' - the program will find each instance of the word 'windy' and return the count 2.
 
 ## Setup/Installation Requirements
