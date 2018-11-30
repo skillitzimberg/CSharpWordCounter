@@ -8,7 +8,7 @@ namespace WordCounter.Controllers
         [Route("/")]
         public ActionResult Index()
         {
-          return new EmptyResult();
+          return View();
         }
 
     }
