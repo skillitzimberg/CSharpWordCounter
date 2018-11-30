@@ -23,7 +23,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void New_RedirectsToCorrectActionResult_True()
+    public void New_ReturnsCorrectActionResult_True()
     {
       //Arrange
       WordCounterController controller = new WordCounterController();
@@ -35,17 +35,17 @@ namespace WordCounter.Tests
       Assert.IsInstanceOfType(newView, typeof(RedirectToActionResult));
     }
 
-    // [TestMethod]
-    // public void New_RedirectsToCorrectAction_Index()
-    // {
-    //   WordCounterController controller = new WordCounterController();
-    //
-    //   RedirectToActionResult actionResult = controller.New() as RedirectToActionResult;
-    //
-    //   string result = actionResult.ActionName;
-    //
-    //   Assert.AreEqual(result, "Index");
-    // }
+    [TestMethod]
+    public void New_RedirectsToCorrectAction_Index()
+    {
+      WordCounterController controller = new WordCounterController();
+
+      RedirectToActionResult actionResult = controller.New() as RedirectToActionResult;
+
+      string result = actionResult.ActionName;
+
+      Assert.AreEqual(result, "Index");
+    }
 
 
     // [TestMethod]
