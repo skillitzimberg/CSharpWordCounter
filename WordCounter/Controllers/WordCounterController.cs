@@ -5,10 +5,10 @@ namespace WordCounter.Controllers
 {
     public class WordCounterController : Controller
     {
-        [Route("/index")]
+        [HttpGet("/index")]
         public ActionResult Index()
         {
-          return new EmptyResult();
+          return View();
         }
 
     }
