@@ -17,12 +17,12 @@ namespace WordCounter.Controllers
       return View();
     }
 
-    [HttpPost("/wordcounter")]
-    public ActionResult Create(string wordToFind, string phraseToSearch)
-    {
-      Counter newCounter = new Counter(wordToFind, phraseToSearch);
-      return RedirectToAction("Index");
-    }
+    // [HttpPost("/wordcounter")]
+    // public ActionResult Create(string wordToFind, string phraseToSearch)
+    // {
+    //   Counter newCounter = new Counter(wordToFind, phraseToSearch);
+    //   return RedirectToAction("Show");
+    // }
 
   }
 }

@@ -34,6 +34,20 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
+    public void Get_matchCount_ReturnsNumberOfWordInstances_Int()
+    {
+      string wordToFind = "happy";
+      string expectedStringToSearch = "I felt happy because I saw the others were happy and because I knew I should feel happy, but I wasn’t really happy.";
+      int expectedCount = 2;
+
+      Counter newCounter = new Counter(wordToFind, expectedStringToSearch);
+
+      int actualCount = newCounter.Get_matchCount();
+
+      Assert.AreEqual(expectedCount, actualCount);
+    }
+
+    [TestMethod]
     public void _wordToFindMatches_ConfirmWhetherStringsMatchOrNot_True()
     {
       string wordToFind = "w";
