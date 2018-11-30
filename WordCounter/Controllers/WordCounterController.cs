@@ -3,13 +3,19 @@ using WordCounter.Models;
 
 namespace WordCounter.Controllers
 {
-    public class WordCounterController : Controller
+  public class WordCounterController : Controller
+  {
+    [HttpGet("/wordcounter")]
+    public ActionResult Index()
     {
-        [HttpGet("/index")]
-        public ActionResult Index()
-        {
-          return View();
-        }
-
+      return View();
     }
+
+    [HttpGet("/wordcounter/new")]
+    public ActionResult New()
+    {
+      return new EmptyResult();
+    }
+
+  }
 }

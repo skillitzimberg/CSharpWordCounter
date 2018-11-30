@@ -22,16 +22,28 @@ namespace WordCounter.Tests
       Assert.IsInstanceOfType(indexView, typeof(ViewResult));
     }
 
+    [TestMethod]
+    public void New_ReturnsCorrectActionResult_True()
+    {
+      //Arrange
+      WordCounterController controller = new WordCounterController();
+
+      //Act
+      ActionResult newView = controller.New();
+
+      //Assert
+      Assert.IsInstanceOfType(newView, typeof(ViewResult));
+    }
 
     // [TestMethod]
-    // public void Index_HasCorrectModelType_ItemList()
+    // public void New_HasCorrectModelType_ItemList()
     // {
     //     //Arrange
     //     WordCounterController controller = new WordCounterController();
-    //     ViewResult indexView = new HomeController().Index() as ViewResult;
+    //     ViewResult newView = new HomeController().New() as ViewResult;
     //
     //     //Act
-    //     var result = indexView.ViewData.Model;
+    //     var result = newView.ViewData.Model;
     //
     //     //Assert
     //     Assert.IsInstanceOfType(result, typeof(List<Item>));
