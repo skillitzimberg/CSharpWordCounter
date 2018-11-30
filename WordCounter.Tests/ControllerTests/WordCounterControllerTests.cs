@@ -48,12 +48,23 @@ namespace WordCounter.Tests
       Assert.IsInstanceOfType(newView, typeof(RedirectToActionResult));
     }
 
+    [TestMethod]
+    public void Create_RedirectsToCorrectAction_Index()
+    {
+      WordCounterController controller = new WordCounterController();
+      RedirectToActionResult actionResult = controller.Create("test", "test") as RedirectToActionResult;
+
+      string result = actionResult.ActionName;
+
+      Assert.AreEqual(result, "Index");
+    }
+
     // [TestMethod]
     // public void Create_HasCorrectModelType_Dictionary()
     // {
     //     //Arrange
     //     WordCounterController controller = new WordCounterController();
-    //     ViewResult newView = new WordCounterController().New() as ViewResult;
+    //     ViewResult newView = new WordCounterController().Create("test", "test") as ViewResult;
     //
     //     //Act
     //     var result = newView.ViewData.Model;
