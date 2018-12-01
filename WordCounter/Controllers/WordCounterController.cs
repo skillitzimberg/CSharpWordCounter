@@ -22,7 +22,7 @@ namespace WordCounter.Controllers
     {
       Counter newCounter = new Counter(wordToFind, phraseToSearch);
       newCounter.CountMatches();
-      return new EmptyResult();
+      return View(newCounter);
     }
 
   }
