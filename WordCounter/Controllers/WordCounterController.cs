@@ -8,7 +8,7 @@ namespace WordCounter.Controllers
     [HttpGet("/wordcounter")]
     public ActionResult Index()
     {
-      return new EmptyResult();
+      return View();
     }
 
     // [HttpGet("/wordcounter/new")]
