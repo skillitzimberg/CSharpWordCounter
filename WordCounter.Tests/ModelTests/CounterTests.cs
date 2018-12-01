@@ -21,7 +21,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void Get_stringToSearch_ReturnsTheStringToSearch_StringToSearch()
+    public void Get_stringToSearch_ReturnsStringToSearch_StringToSearch()
     {
       string wordToFind = "a";
       string expectedStringToSearch = "b";
@@ -31,6 +31,20 @@ namespace WordCounter.Tests
       string actualStringToSearch = newCounter.Get_stringToSearch();
 
       Assert.AreEqual(expectedStringToSearch, actualStringToSearch);
+    }
+
+    [TestMethod]
+    public void Get_matchCounth_ReturnsMatchCount_matchCounth()
+    {
+      string wordToFind = "a";
+      string stringToSearch = "b";
+      int expectedMatchCount = 3;
+
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
+      newCounter.Set_matchCount(expectedMatchCount);
+      int actualMatchCount = newCounter.Get_matchCount();
+
+      Assert.AreEqual(expectedMatchCount, actualMatchCount);
     }
 
     // [TestMethod]

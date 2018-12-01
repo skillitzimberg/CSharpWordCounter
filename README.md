@@ -25,6 +25,13 @@ Output: 'a', 'b'
 
 Checks to make sure both inputs are returned and cannot be confused with each other.
 
+##### Spec 3: Counter can set and get its \_matchCount property.
+**Example:**
+InputOne: 3
+Output: 3
+
+Checks to make sure both Set and Get methods are working.
+
 ##### Spec 3: Counter compares both inputs and returns boolean: true if they match, boolean: false if they don't.
 **Example:**
 InputOne: 'a'

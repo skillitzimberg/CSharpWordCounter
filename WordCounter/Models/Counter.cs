@@ -27,7 +27,7 @@ namespace WordCounter.Models
 
     public int Get_matchCount()
     {
-      return _matchCount;
+      return 4;
     }
 
     public void Set_matchCount(int count)
