@@ -112,7 +112,7 @@ namespace WordCounter.Tests
     {
       string wordToFind = "banana";
       string stringToSearch = "banana cabana bananas banana annabanana another banana";
-      int expectedCount = 4;
+      int expectedCount = 3;
 
       Counter newCounter = new Counter(wordToFind, stringToSearch);
 
