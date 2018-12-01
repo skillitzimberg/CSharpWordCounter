@@ -65,6 +65,8 @@ namespace WordCounter.Tests
       newCounter.Set_matchCount(count);
       int actualCount = newCounter.Get_matchCount();
 
+      // Console.WriteLine("CounterTests: " + actualCount);
+
       Assert.AreEqual(expectedCount, actualCount);
     }
 

@@ -54,6 +54,7 @@ namespace WordCounter.Models
           allMatches.Add(wordToCompare);
         }
       }
+
       return allMatches;
     }
 
@@ -61,6 +62,10 @@ namespace WordCounter.Models
     {
       List<string> matchingWords = this.FindMatchingWords();
 
+            this.Set_matchCount(matchingWords.Count);
+            Console.WriteLine("Counter.cs: " + _wordToFind);
+            Console.WriteLine("Counter.cs: " + _stringToSearch);
+            Console.WriteLine("Counter.cs: " + _matchCount);
       return matchingWords.Count;
     }
 
