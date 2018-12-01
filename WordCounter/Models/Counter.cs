@@ -17,7 +17,7 @@ namespace WordCounter.Models
 
     public string Get_wordToFind()
     {
-      return "c";
+      return _wordToFind;
     }
 
     public string Get_stringToSearch()
