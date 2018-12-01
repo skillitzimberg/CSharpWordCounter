@@ -19,20 +19,20 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(wordToFind, actualString);
     }
-    //
-    // [TestMethod]
-    // public void Get_stringToSearch_ReturnsTheStringToSearch_StringToSearch()
-    // {
-    //   string wordToFind = "searched";
-    //   string expectedStringToSearch = "This string is to be searched for WordToFind";
-    //
-    //   Counter newCounter = new Counter(wordToFind, expectedStringToSearch);
-    //
-    //   string actualStringToSearch = newCounter.Get_stringToSearch();
-    //
-    //   Assert.AreEqual(expectedStringToSearch, actualStringToSearch);
-    // }
-    //
+
+    [TestMethod]
+    public void Get_stringToSearch_ReturnsTheStringToSearch_StringToSearch()
+    {
+      string wordToFind = "a";
+      string expectedStringToSearch = "b";
+
+      Counter newCounter = new Counter(wordToFind, expectedStringToSearch);
+
+      string actualStringToSearch = newCounter.Get_stringToSearch();
+
+      Assert.AreEqual(expectedStringToSearch, actualStringToSearch);
+    }
+
     // [TestMethod]
     // public void Set_matchCount_SetsNumberOfWordInstances_Int()
     // {

@@ -22,7 +22,7 @@ namespace WordCounter.Models
 
     public string Get_stringToSearch()
     {
-      return _stringToSearch;
+      return "c";
     }
 
     public int Get_matchCount()
