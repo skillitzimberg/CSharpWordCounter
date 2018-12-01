@@ -24,7 +24,7 @@ namespace WordCounter
       services.AddMvc();
     }
 
-    public void Configure(IApplicationBuilder app)
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
     {
       app.UseDeveloperExceptionPage();
       app.UseMvc(routes =>

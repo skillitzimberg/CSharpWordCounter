@@ -61,18 +61,5 @@ namespace WordCounter.Tests
         Assert.IsInstanceOfType(result, typeof(Counter));
     }
 
-    // [TestMethod]
-    // public void Create_RedirectsToCorrectAction_Show()
-    // {
-    //   WordCounterController controller = new WordCounterController();
-    //   RedirectToActionResult actionResult = controller.Create("test", "test") as RedirectToActionResult;
-    //
-    //   string result = actionResult.ActionName;
-    //
-    //   Assert.AreEqual(result, "Index");
-    // }
-
-
-
   }
 }

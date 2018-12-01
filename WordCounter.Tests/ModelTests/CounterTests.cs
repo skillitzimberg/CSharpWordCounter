@@ -61,25 +61,6 @@ namespace WordCounter.Tests
       Assert.AreEqual(false, doStringsMatch);
     }
 
-
-    // [TestMethod]
-    // public void Get_matchCount_ReturnsNumberOfWordInstances_Int()
-    // {
-    //   string wordToFind = "happy";
-    //   string expectedStringToSearch = "I felt happy because I saw the others were happy and because I knew I should feel happy, but I wasn’t really happy.";
-    //   int expectedCount = 4;
-    //
-    //   Counter newCounter = new Counter(wordToFind, expectedStringToSearch);
-    //
-    //   int count = newCounter.CountHowManyTimesTheWordWasFound();
-    //   newCounter.Set_matchCount(count);
-    //   int actualCount = newCounter.Get_matchCount();
-    //
-    //   // Console.WriteLine("CounterTests: " + actualCount);
-    //
-    //   Assert.AreEqual(expectedCount, actualCount);
-    // }
-
     [TestMethod]
     public void FindMatchingWords_ReturnAListOfMatchingWordsFound_ListOfFoundMatches()
     {

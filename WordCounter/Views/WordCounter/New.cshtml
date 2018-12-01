@@ -5,13 +5,18 @@
     <h1>Start A Word Count</h1>
 
     <form class="" action="/wordcounter/show" method="post">
-      <label for="wordToFind">Word to find: </label>
-      <input type="text" name="wordToFind" id="wordToFind">
-
-      <label for="phraseToSearch">Text to search for the word: </label>
-      <input type="text" name="phraseToSearch" id="phraseToSearch">
-
-      <button type="submit" class="btn">Go!</button>
+      <div class="form-group">
+        <label for="wordToFind">Word to find: </label>
+        <input type="text" name="wordToFind" id="wordToFind">
+      </div>
+      <div class="form-group">
+        <label for="phraseToSearch">Text to search for the word: </label>
+        <input type="text" name="phraseToSearch" id="phraseToSearch">
+      </div>
+      <button type="submit" class="btn-lg btn-primary">Go!</button>
     </form>
+
+    <h4><a href='/wordcounter/new'>New Word Count</a></h4>
+    <h4><a href='/'>Back to Hub</a></h4>
 
 </div>
