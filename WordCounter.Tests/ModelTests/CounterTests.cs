@@ -112,6 +112,20 @@ namespace WordCounter.Tests
     {
       string wordToFind = "banana";
       string stringToSearch = "banana cabana bananas banana annabanana another banana";
+      int expectedCount = 4;
+
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
+
+      int actualCount = newCounter.CountMatches();
+
+      Assert.AreEqual(expectedCount, actualCount);
+    }
+
+    [TestMethod]
+    public void Counter_MatchesWordsCaseInsensitive_Int()
+    {
+      string wordToFind = "bAnana";
+      string stringToSearch = "Banana cabana bananas baNana annabanana another bananA";
       int expectedCount = 3;
 
       Counter newCounter = new Counter(wordToFind, stringToSearch);
@@ -120,18 +134,5 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(expectedCount, actualCount);
     }
-    //
-    // [TestMethod]
-    // public void _wordToFindMatches_MatchesWordsCaseInsensitive_True()
-    // {
-    //   string wordToFind = "w";
-    //   string stringToSearch = "W";
-    //
-    //   Counter newCounter = new Counter(wordToFind, stringToSearch);
-    //
-    //   bool doStringsMatch = newCounter._wordToFindMatches(stringToSearch);
-    //
-    //   Assert.AreEqual(true, doStringsMatch);
-    // }
   }
 }

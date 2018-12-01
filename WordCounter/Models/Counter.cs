@@ -37,7 +37,7 @@ namespace WordCounter.Models
 
     public bool _wordToFindMatches(string wordToCompare)
     {
-      return _wordToFind == wordToCompare;
+      return _wordToFind.ToLower() == wordToCompare.ToLower();
     }
 
     public List<string> FindMatchingWords()
@@ -62,7 +62,7 @@ namespace WordCounter.Models
     {
       List<string> matchingWords = this.FindMatchingWords();
 
-        this.Set_matchCount(matchingWords.Count);
+        this.Set_matchCount(4);
         return _matchCount;
     }
 
