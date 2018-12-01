@@ -34,20 +34,20 @@ namespace WordCounter.Tests
       //Assert
       Assert.IsInstanceOfType(newView, typeof(ViewResult));
     }
-    
-    // [TestMethod]
-    // public void Show_ReturnsCorrectActionResult_True()
-    // {
-    //   //Arrange
-    //   WordCounterController controller = new WordCounterController();
-    //
-    //   //Act
-    //   ActionResult newView = controller.Show("test", "test");
-    //
-    //   //Assert
-    //   Assert.IsInstanceOfType(newView, typeof(ViewResult));
-    // }
-    //
+
+    [TestMethod]
+    public void Show_ReturnsCorrectActionResult_True()
+    {
+      //Arrange
+      WordCounterController controller = new WordCounterController();
+
+      //Act
+      ActionResult newView = controller.Show("test", "test");
+
+      //Assert
+      Assert.IsInstanceOfType(newView, typeof(ViewResult));
+    }
+
     // [TestMethod]
     // public void Show_HasCorrectModelType_Counter()
     // {

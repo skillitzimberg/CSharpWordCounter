@@ -17,13 +17,13 @@ namespace WordCounter.Controllers
       return View();
     }
 
-    // [HttpPost("/wordcounter/show")]
-    // public ActionResult Show(string wordToFind, string phraseToSearch)
-    // {
-    //   Counter newCounter = new Counter(wordToFind, phraseToSearch);
-    //   newCounter.CountHowManyTimesTheWordWasFound();
-    //   return View(newCounter);
-    // }
+    [HttpPost("/wordcounter/show")]
+    public ActionResult Show(string wordToFind, string phraseToSearch)
+    {
+      Counter newCounter = new Counter(wordToFind, phraseToSearch);
+      newCounter.CountMatches();
+      return new EmptyResult();
+    }
 
   }
 }
