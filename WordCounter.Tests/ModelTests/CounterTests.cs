@@ -103,6 +103,7 @@ namespace WordCounter.Tests
 
       Counter newCounter = new Counter(wordToFind, stringToSearch);
 
+
       int actualCount = newCounter.CountMatches();
 
       Assert.AreEqual(expectedCount, actualCount);
@@ -135,20 +136,20 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(expectedString, actualString);
     }
-    //
-    // [TestMethod]
-    // public void Counter_IgnoresPunctuation_Int()
-    // {
-    //   string wordToFind = "happy";
-    //   string stringToSearch = "I felt happy because I saw the others were .happy and because I knew I should feel happy,. but I wasn’t really happy.";
-    //   List<string> expectedList = new List<string> {"happy", "happy", "happy", "happy"};
-    //
-    //   Counter newCounter = new Counter(wordToFind, stringToSearch);
-    //
-    //   List<string> actualList = newCounter.FindMatchingWords();
-    //
-    //   CollectionAssert.AreEqual(expectedList, actualList);
-    // }
+
+    [TestMethod]
+    public void Counter_IgnoresPunctuation_Int()
+    {
+      string wordToFind = "happy";
+      string stringToSearch = "I felt happy because I saw the others were .happy and because I knew I should feel happy,. but I wasn’t really happy.";
+      List<string> expectedList = new List<string> {"happy", "happy", "happy", "happy"};
+
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
+
+      List<string> actualList = newCounter.FindMatchingWords();
+
+      CollectionAssert.AreEqual(expectedList, actualList);
+    }
 
   }
 }

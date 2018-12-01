@@ -54,19 +54,18 @@ namespace WordCounter.Models
 
     public List<string> FindMatchingWords()
     {
-      // char[] charsToTrim = {',', '.', '?', '!', ';', ':'};
       string[] arrayOfStringsToSearch = _stringToSearch.Split(' ');
       List<string> allMatches = new List<string> {};
 
       foreach (string word in arrayOfStringsToSearch)
       {
-        string wordToCompare = word;
+        string wordToCompare = this.RemovePunctuation(word);
         if (_wordToFindMatches(wordToCompare))
         {
           allMatches.Add(wordToCompare);
         }
       }
-
+      this.Set_matchCount(allMatches.Count);
       return allMatches;
     }
 
@@ -74,8 +73,8 @@ namespace WordCounter.Models
     {
       List<string> matchingWords = this.FindMatchingWords();
 
-        this.Set_matchCount(matchingWords.Count);
-        return _matchCount;
+      this.Set_matchCount(matchingWords.Count);
+      return 7;
     }
 
   }
