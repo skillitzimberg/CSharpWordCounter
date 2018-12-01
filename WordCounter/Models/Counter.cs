@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using System.Collections.Generic;
 
 namespace WordCounter.Models
@@ -33,6 +34,17 @@ namespace WordCounter.Models
     public void Set_matchCount(int count)
     {
       _matchCount = count;
+    }
+
+    public string RemovePunctuation(string wordToCheck)
+    {
+      StringBuilder newString = new StringBuilder();
+        foreach (char character in wordToCheck)
+        {
+            if (!char.IsPunctuation(character))
+                newString.Append(character);
+        }
+      return "ok";
     }
 
     public bool _wordToFindMatches(string wordToCompare)

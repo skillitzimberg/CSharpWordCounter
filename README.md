@@ -52,7 +52,7 @@ Confirms that Counter doesn't stop comparing after the first word.
 **Example:**
 InputOne: 'banana'
 InputTwo: 'banana cabana bananas banana annabanana another banana'
-Output: '3'
+Output: 3
 
 Confirms that Counter can add instances found and return that number.
 
@@ -60,15 +60,21 @@ Confirms that Counter can add instances found and return that number.
 **Example:**
 InputOne: 'bAnana'
 InputTwo: 'Banana cabana bananas baNana annabanana another bananA'
-Output: '3'
+Output: 3
 
 Confirms that Counter can return the correct count regardless of capitalization.
 
-##### Spec 8: Counter ignores punctuation and returns correct number of matches.
+##### Spec 8: Counter removes punctuation from a string.
+**Example:**
+InputOne: 'happy'
+InputTwo: '.,happy.'
+Output: 'happy'
+
+##### Spec 9: Counter ignores punctuation and returns correct number of matches.
 **Example:**
 InputOne: 'happy'
 InputTwo: 'I felt happy because I saw the others were .happy and because I knew I should feel happy,. but I wasn’t really happy.'
-Output: '4'
+Output: 4
 
 
 ## Setup/Installation Requirements

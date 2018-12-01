@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Text;
 using System.Collections.Generic;
 using WordCounter.Models;
 
@@ -93,20 +94,6 @@ namespace WordCounter.Tests
       CollectionAssert.AreEqual(expectedList, actualList);
     }
 
-    // [TestMethod]
-    // public void FindMatchingWords_ReturnAListOfMultipleMatchingWordsFound_ListOfFoundMatches()
-    // {
-    //   string wordToFind = "happy";
-    //   string stringToSearch = "I felt happy because I saw the others were happy and because I knew I should feel happy, but I wasn’t really happy.";
-    //   List<string> expectedList = new List<string> {"happy", "happy", "happy", "happy"};
-    //
-    //   Counter newCounter = new Counter(wordToFind, stringToSearch);
-    //
-    //   List<string> actualList = newCounter.FindMatchingWords();
-    //
-    //   CollectionAssert.AreEqual(expectedList, actualList);
-    // }
-
     [TestMethod]
     public void CountMatches_ReturnTheNumberOfTimesTheWordWasFound_Int()
     {
@@ -134,5 +121,34 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(expectedCount, actualCount);
     }
+
+    [TestMethod]
+    public void RemovePunctuation_RemovesPunctuation_String()
+    {
+      string wordToFind = "happy";
+      string stringToSearch = ".,happy.";
+      string expectedString = "happy";
+
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
+
+      string actualString = newCounter.RemovePunctuation(stringToSearch);
+
+      Assert.AreEqual(expectedString, actualString);
+    }
+    //
+    // [TestMethod]
+    // public void Counter_IgnoresPunctuation_Int()
+    // {
+    //   string wordToFind = "happy";
+    //   string stringToSearch = "I felt happy because I saw the others were .happy and because I knew I should feel happy,. but I wasn’t really happy.";
+    //   List<string> expectedList = new List<string> {"happy", "happy", "happy", "happy"};
+    //
+    //   Counter newCounter = new Counter(wordToFind, stringToSearch);
+    //
+    //   List<string> actualList = newCounter.FindMatchingWords();
+    //
+    //   CollectionAssert.AreEqual(expectedList, actualList);
+    // }
+
   }
 }
