@@ -106,20 +106,20 @@ namespace WordCounter.Tests
     //
     //   CollectionAssert.AreEqual(expectedList, actualList);
     // }
-    //
-    // [TestMethod]
-    // public void CountHowManyTimesTheWordWasFound_ReturnTheNumberOfTimesTheWordWasFound_Integer()
-    // {
-    //   string wordToFind = "happy";
-    //   string stringToSearch = "I felt happy because I saw the others were happy and because I knew I should feel happy, but I wasn’t really happy.";
-    //   int expectedCount = 4;
-    //
-    //   Counter newCounter = new Counter(wordToFind, stringToSearch);
-    //
-    //   int actualCount = newCounter.CountHowManyTimesTheWordWasFound();
-    //
-    //   Assert.AreEqual(expectedCount, actualCount);
-    // }
+
+    [TestMethod]
+    public void CountMatches_ReturnTheNumberOfTimesTheWordWasFound_Int()
+    {
+      string wordToFind = "banana";
+      string stringToSearch = "banana cabana bananas banana annabanana another banana";
+      int expectedCount = 3;
+
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
+
+      int actualCount = newCounter.CountMatches();
+
+      Assert.AreEqual(expectedCount, actualCount);
+    }
     //
     // [TestMethod]
     // public void _wordToFindMatches_MatchesWordsCaseInsensitive_True()

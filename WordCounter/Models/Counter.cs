@@ -58,15 +58,12 @@ namespace WordCounter.Models
       return allMatches;
     }
 
-    public int CountHowManyTimesTheWordWasFound()
+    public int CountMatches()
     {
       List<string> matchingWords = this.FindMatchingWords();
 
-            this.Set_matchCount(matchingWords.Count);
-            Console.WriteLine("Counter.cs: " + _wordToFind);
-            Console.WriteLine("Counter.cs: " + _stringToSearch);
-            Console.WriteLine("Counter.cs: " + _matchCount);
-      return matchingWords.Count;
+        this.Set_matchCount(4);
+        return _matchCount;
     }
 
   }
