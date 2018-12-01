@@ -21,6 +21,7 @@ namespace WordCounter.Controllers
     public ActionResult Show(string wordToFind, string phraseToSearch)
     {
       Counter newCounter = new Counter(wordToFind, phraseToSearch);
+      newCounter.CountHowManyTimesTheWordWasFound();
       return View(newCounter);
     }
 
