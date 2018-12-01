@@ -6,21 +6,21 @@ using WordCounter.Models;
 
 namespace WordCounter.Tests
 {
-  // [TestClass]
-  // public class HomeControllerTest
-  // {
-  //   [TestMethod]
-  //   public void Index_ReturnsCorrectActionResult_True()
-  //   {
-  //       //Arrange
-  //     HomeController controller = new HomeController();
-  //
-  //     //Act
-  //     ActionResult indexView = controller.Index();
-  //
-  //     //Assert
-  //     Assert.IsInstanceOfType(indexView, typeof(ViewResult));
-  //   }
-  //
-  // }
+  [TestClass]
+  public class HomeControllerTest
+  {
+    [TestMethod]
+    public void Index_ReturnsCorrectActionResult_True()
+    {
+        //Arrange
+      HomeController controller = new HomeController();
+
+      //Act
+      ActionResult indexView = controller.Index();
+
+      //Assert
+      Assert.IsInstanceOfType(indexView, typeof(ViewResult));
+    }
+
+  }
 }
