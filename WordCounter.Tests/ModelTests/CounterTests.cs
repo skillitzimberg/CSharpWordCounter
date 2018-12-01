@@ -84,7 +84,7 @@ namespace WordCounter.Tests
     {
       string wordToFind = "banana";
       string stringToSearch = "one banana";
-      List<string> expectedList = new List<string> {"boat"};
+      List<string> expectedList = new List<string> {"banana"};
 
       Counter newCounter = new Counter(wordToFind, stringToSearch);
 
