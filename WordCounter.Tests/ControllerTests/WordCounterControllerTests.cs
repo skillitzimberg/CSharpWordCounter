@@ -22,19 +22,19 @@ namespace WordCounter.Tests
       Assert.IsInstanceOfType(indexView, typeof(ViewResult));
     }
 
-    // [TestMethod]
-    // public void New_ReturnsCorrectActionResult_True()
-    // {
-    //   //Arrange
-    //   WordCounterController controller = new WordCounterController();
-    //
-    //   //Act
-    //   ActionResult newView = controller.New();
-    //
-    //   //Assert
-    //   Assert.IsInstanceOfType(newView, typeof(ViewResult));
-    // }
-    //
+    [TestMethod]
+    public void New_ReturnsCorrectActionResult_True()
+    {
+      //Arrange
+      WordCounterController controller = new WordCounterController();
+
+      //Act
+      ActionResult newView = controller.New();
+
+      //Assert
+      Assert.IsInstanceOfType(newView, typeof(ViewResult));
+    }
+    
     // [TestMethod]
     // public void Show_ReturnsCorrectActionResult_True()
     // {
