@@ -74,7 +74,7 @@ namespace WordCounter.Models
       List<string> matchingWords = this.FindMatchingWords();
 
       this.Set_matchCount(matchingWords.Count);
-      return 7;
+      return _matchCount;
     }
 
   }
