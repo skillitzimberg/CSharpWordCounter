@@ -42,13 +42,13 @@ namespace WordCounter.Models
 
     public List<string> FindMatchingWords()
     {
-      char[] charsToTrim = {',', '.', '?', '!', ';', ':'};
+      // char[] charsToTrim = {',', '.', '?', '!', ';', ':'};
       string[] arrayOfStringsToSearch = _stringToSearch.Split(' ');
       List<string> allMatches = new List<string> {};
 
       foreach (string word in arrayOfStringsToSearch)
       {
-        string wordToCompare = word.TrimEnd(charsToTrim);
+        string wordToCompare = word;
         if (_wordToFindMatches(wordToCompare))
         {
           allMatches.Add(wordToCompare);

@@ -40,11 +40,11 @@ Output: 'false'
 
 Confirms that inputs are being compared to each other rather than having InputOne found in InputTwo when InputTwo is a multi-letter word.
 
-##### Spec 5: Counter can verify that InputOne appears in InputTwo when InputTwo contains two or more words and returns boolean: true if it does, boolean: false if it doesn't.
+##### Spec 5: Counter can find InputOne in InputTwo when InputTwo contains two or more words.
 **Example:**
 InputOne: 'banana'
 InputTwo: 'one banana'
-Output: 'true'
+Output: List<string> {"banana"}
 
 Confirms that Counter doesn't stop comparing after the first word.
 

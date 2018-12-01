@@ -79,20 +79,20 @@ namespace WordCounter.Tests
     //   Assert.AreEqual(expectedCount, actualCount);
     // }
 
-    // [TestMethod]
-    // public void FindMatchingWords_ReturnAListOfMatchingWordsFound_ListOfFoundMatches()
-    // {
-    //   string wordToFind = "an";
-    //   string stringToSearch = "a cat that saw a rat and a dog had an anuerysm.";
-    //   List<string> expectedList = new List<string> {"an"};
-    //
-    //   Counter newCounter = new Counter(wordToFind, stringToSearch);
-    //
-    //   List<string> actualList = newCounter.FindMatchingWords();
-    //
-    //   CollectionAssert.AreEqual(expectedList, actualList);
-    // }
-    //
+    [TestMethod]
+    public void FindMatchingWords_ReturnAListOfMatchingWordsFound_ListOfFoundMatches()
+    {
+      string wordToFind = "banana";
+      string stringToSearch = "one banana";
+      List<string> expectedList = new List<string> {"boat"};
+
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
+
+      List<string> actualList = newCounter.FindMatchingWords();
+
+      CollectionAssert.AreEqual(expectedList, actualList);
+    }
+
     // [TestMethod]
     // public void FindMatchingWords_ReturnAListOfMultipleMatchingWordsFound_ListOfFoundMatches()
     // {
