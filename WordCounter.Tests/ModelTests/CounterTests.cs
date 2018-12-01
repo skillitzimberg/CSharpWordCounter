@@ -9,7 +9,7 @@ namespace WordCounter.Tests
   public class CounterTest
   {
     [TestMethod]
-    public void Get_wordToFind_ReturnsWordToFind_WordToFind()
+    public void Get_wordToFind_ReturnsWordToFind_String()
     {
       string wordToFind = "a";
       string stringToSearch = "b";
@@ -21,7 +21,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void Get_stringToSearch_ReturnsStringToSearch_StringToSearch()
+    public void Get_stringToSearch_ReturnsStringToSearch_String()
     {
       string wordToFind = "a";
       string expectedStringToSearch = "b";
@@ -34,7 +34,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void Get_matchCounth_ReturnsMatchCount_matchCounth()
+    public void GetandSet_matchCounth_ReturnsMatchCount_Int()
     {
       string wordToFind = "a";
       string stringToSearch = "b";
@@ -47,25 +47,20 @@ namespace WordCounter.Tests
       Assert.AreEqual(expectedMatchCount, actualMatchCount);
     }
 
-    // [TestMethod]
-    // public void Set_matchCount_SetsNumberOfWordInstances_Int()
-    // {
-    //   //Arrange
-    //   string wordToFind = "happy";
-    //   string expectedStringToSearch = "I felt happy because I saw the others were happy and because I knew I should feel happy, but I wasn’t really happy.";
-    //   int expectedCount = 4;
-    //
-    //   Counter newCounter = new Counter(wordToFind, expectedStringToSearch);
-    //
-    //   //Act
-    //   int count = newCounter.CountHowManyTimesTheWordWasFound();
-    //   newCounter.Set_matchCount(count);
-    //   int actualCount = newCounter.Get_matchCount();
-    //
-    //   //Assert
-    //   Assert.AreEqual(expectedCount, actualCount);
-    // }
-    //
+    [TestMethod]
+    public void _wordToFindMatches_ConfirmWhetherStringsMatchOrNot_False()
+    {
+      string wordToFind = "a";
+      string stringToSearch = "banana";
+
+      Counter newCounter = new Counter(wordToFind, stringToSearch);
+
+      bool doStringsMatch = newCounter._wordToFindMatches(stringToSearch);
+
+      Assert.AreEqual(false, doStringsMatch);
+    }
+
+
     // [TestMethod]
     // public void Get_matchCount_ReturnsNumberOfWordInstances_Int()
     // {
@@ -83,20 +78,7 @@ namespace WordCounter.Tests
     //
     //   Assert.AreEqual(expectedCount, actualCount);
     // }
-    //
-    // [TestMethod]
-    // public void _wordToFindMatches_ConfirmWhetherStringsMatchOrNot_True()
-    // {
-    //   string wordToFind = "w";
-    //   string stringToSearch = "w";
-    //
-    //   Counter newCounter = new Counter(wordToFind, stringToSearch);
-    //
-    //   bool doStringsMatch = newCounter._wordToFindMatches(stringToSearch);
-    //
-    //   Assert.AreEqual(true, doStringsMatch);
-    // }
-    //
+
     // [TestMethod]
     // public void FindMatchingWords_ReturnAListOfMatchingWordsFound_ListOfFoundMatches()
     // {

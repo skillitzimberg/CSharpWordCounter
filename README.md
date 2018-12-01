@@ -32,7 +32,7 @@ Output: 3
 
 Checks to make sure both Set and Get methods are working.
 
-##### Spec 3: Counter compares both inputs and returns boolean: true if they match, boolean: false if they don't.
+##### Spec 4: Counter compares both inputs and returns boolean: true if they match, boolean: false if they don't.
 **Example:**
 InputOne: 'a'
 InputTwo: 'banana'
@@ -40,7 +40,7 @@ Output: 'false'
 
 Confirms that inputs are being compared to each other rather than having InputOne found in InputTwo when InputTwo is a multi-letter word.
 
-##### Spec 4: Counter can verify that InputOne appears in InputTwo when InputTwo contains two or more words and returns boolean: true if it does, boolean: false if it doesn't.
+##### Spec 5: Counter can verify that InputOne appears in InputTwo when InputTwo contains two or more words and returns boolean: true if it does, boolean: false if it doesn't.
 **Example:**
 InputOne: 'banana'
 InputTwo: 'one banana'
@@ -48,7 +48,7 @@ Output: 'true'
 
 Confirms that Counter doesn't stop comparing after the first word.
 
-##### Spec 5: Counter counts every instance of InputOne in InputTwo and returns that number.
+##### Spec 6: Counter counts every instance of InputOne in InputTwo and returns that number.
 **Example:**
 InputOne: 'banana'
 InputTwo: 'banana cabana bananas banana annabanana another banana'
@@ -56,7 +56,7 @@ Output: '3'
 
 Confirms that Counter can add instances found and return that number.
 
-##### Spec 6: Counter ignores capitalization and returns correct number of matches.
+##### Spec 7: Counter ignores capitalization and returns correct number of matches.
 **Example:**
 InputOne: 'bAnana'
 InputTwo: 'Banana cabana bananas baNana annabanana another bananA'
@@ -64,7 +64,7 @@ Output: '3'
 
 Confirms that Counter can return the correct count regardless of capitalization.
 
-##### Spec 7: Counter ignores punctuation and returns correct number of matches.
+##### Spec 8: Counter ignores punctuation and returns correct number of matches.
 **Example:**
 InputOne: 'happy'
 InputTwo: 'I felt happy because I saw the others were .happy and because I knew I should feel happy,. but I wasn’t really happy.'
