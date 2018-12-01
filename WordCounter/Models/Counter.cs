@@ -44,7 +44,7 @@ namespace WordCounter.Models
             if (!char.IsPunctuation(character))
                 newString.Append(character);
         }
-      return "ok";
+      return newString.ToString();
     }
 
     public bool _wordToFindMatches(string wordToCompare)
