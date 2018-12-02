@@ -52,7 +52,7 @@ namespace WordCounter.Models
       return _wordToFind.ToLower() == wordToCompare.ToLower();
     }
 
-    public List<string> FindMatchingWords()
+    public int FindMatchingWords()
     {
       string[] arrayOfStringsToSearch = _stringToSearch.Split(' ');
       List<string> allMatches = new List<string> {};
@@ -66,14 +66,6 @@ namespace WordCounter.Models
         }
       }
       this.Set_matchCount(allMatches.Count);
-      return allMatches;
-    }
-
-    public int CountMatches()
-    {
-      List<string> matchingWords = this.FindMatchingWords();
-
-      this.Set_matchCount(matchingWords.Count);
       return _matchCount;
     }
 
