@@ -60,21 +60,7 @@ namespace WordCounter.Tests
 
       Assert.AreEqual(false, doStringsMatch);
     }
-
-    // [TestMethod]
-    // public void FindMatchingWords_ReturnAListOfMatchingWordsFound_ListOfFoundMatches()
-    // {
-    //   string wordToFind = "banana";
-    //   string stringToSearch = "one banana";
-    //   List<string> expectedList = new List<string> {"banana"};
-    //
-    //   Counter newCounter = new Counter(wordToFind, stringToSearch);
-    //
-    //   List<string> actualList = newCounter.FindMatchingWords();
-    //
-    //   CollectionAssert.AreEqual(expectedList, actualList);
-    // }
-
+    
     [TestMethod]
     public void FindMatchingWords_ReturnTheNumberOfTimesTheWordWasFound_Int()
     {
